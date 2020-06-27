@@ -5,3 +5,43 @@ body {
 	width: 100vw;
 	height: 100vh;
 }
+
+main {
+	height: calc(100% - 100px);
+	padding: 50px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 0.3fr 1.7fr 1fr;
+	grid-template-areas: "nav nav logo logo" "content content content content" "content content content content";
+}
+
+.nav { grid-area: nav; display: flex;}
+	.nav button {
+		display: flex;
+		align-items: center;
+		padding: 5px 20px;
+		border: none;
+		border-radius: 100vw;
+		background: none;
+		color: white;
+		font-size: 20px;
+		width: 80px;
+		transition: all 0.25s;
+	}
+	.nav button span {
+		margin-left: 10px;
+		display: none;
+	}
+	.nav button:hover {
+		background: #ff4242;
+		width: auto;
+	}
+	.nav button:hover span {
+		display: inline-block;
+	}
+
+.logo { grid-area: logo; text-align: right; }
+
+.content { grid-area: content; }
+
+.nav, .logo { padding-bottom: 50px; }
